@@ -8,6 +8,14 @@
 
     <include layout="@layout/content_main" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_note_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/row_note"/>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

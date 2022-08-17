@@ -6,26 +6,29 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import br.com.smk.notes.databinding.FragmentSecondBinding
+import br.com.smk.notes.databinding.MainFragmentBinding
 
-class SecondFragment : Fragment() {
+class MainFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: MainFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = MainFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        onButtonFirstClicked()
+    }
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+    private fun onButtonFirstClicked() {
+        binding.buttonFirst.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
 
